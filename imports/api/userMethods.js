@@ -4,33 +4,22 @@ import {UsersCollection} from "./UsersCollection";
 Meteor.methods({
     'users.search'(name) {
         check(name, String);
-        /*
-                if (!this.userId) {
-                    throw new Meteor.Error('Not authorized.');
-                }*/
 
         UsersCollection.findOne({"name":name})
     },
     'users.insert'(name) {
         check(name, String);
-/*
-        if (!this.userId) {
-            throw new Meteor.Error('Not authorized.');
-        }*/
-
-        UsersCollection.insert({
+        return UsersCollection.insert({
             name,
             createdAt: new Date,
-            entry_count: 1,
+            clickCount: 0,
         })
     },
 
     'users.remove'(userId) {
         check(userId, String);
 
-        if (!this.userId) {
-            throw new Meteor.Error('Not authorized.');
-        }
+
 
         UsersCollection.remove(userId);
     },

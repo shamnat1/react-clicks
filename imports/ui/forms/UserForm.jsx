@@ -10,17 +10,24 @@ export const UserForm = () => {
 
         if (!name) return;
 
+        let userInfo  = UsersCollection.findOne({"name":name.trim()});
+        let userId = userInfo?userInfo._id:"";
+        if(userId)
+            Session.set("userId", userId)
         if(!UsersCollection.findOne({"name":name.trim()}))
         {
-            console.log("users11 ",userInfo)
-            Meteor.call('users.insert', name.trim());
-        }else{
+            console.log("users11 ",name.trim())
+            userId = Meteor.call('users.insert', name.trim(),function(error, result){
+                 userId = result;
+                    // console.log("userId ",userId)
+                if(userId)
+                    Session.set("userId", userId)
+                console.log("userInfo",userId,Session.get("userId"))
+            });
 
         }
-        var userInfo  = UsersCollection.findOne({"name":name.trim()});
-        if(userInfo)
-            Session.set("userId", userInfo._id)
-        console.log("userInfo",userInfo,Session.get("userId"))
+
+
 
         setName("");
     };

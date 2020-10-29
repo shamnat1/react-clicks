@@ -22,7 +22,7 @@ export const Click = () => {
 
   return (
     <div>
-        <div class="click">
+        <div className="click">
             <button onClick={increment}>Click Me</button>
         </div>
 
