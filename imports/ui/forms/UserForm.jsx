@@ -16,13 +16,11 @@ export const UserForm = () => {
             Session.set("userId", userId)
         if(!UsersCollection.findOne({"name":name.trim()}))
         {
-            console.log("users11 ",name.trim())
             userId = Meteor.call('users.insert', name.trim(),function(error, result){
                  userId = result;
                     // console.log("userId ",userId)
                 if(userId)
                     Session.set("userId", userId)
-                console.log("userInfo",userId,Session.get("userId"))
             });
 
         }

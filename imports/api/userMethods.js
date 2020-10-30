@@ -27,9 +27,6 @@ Meteor.methods({
     'users.updateClicks'(userId, clickCount) {
         check(userId, String);
         // check(isChecked, Boolean);
-        console.log("clickCount",userId,clickCount)
-
-
         UsersCollection.update(userId, {
             $set: {
                 clickCount

@@ -10,11 +10,9 @@ export const Click = () => {
     let userInfo = useTracker(() =>  UsersCollection.findOne({"_id":Session.get("userId")}));
   const increment = () => {
       if(userInfo) {
-          console.log("user55 ",userInfo._id,userInfo.clickCount)
               Meteor.call('users.updateClicks', userInfo._id,userInfo.clickCount?userInfo.clickCount+1:1,function(error, response){
-              console.log("yy ",error,response)
           });
-          console.log("yy ",userInfo)
+
       }
     setCounter(counter + 1);
 
@@ -29,7 +27,7 @@ export const Click = () => {
        <h2>Current Clicks</h2>
       <p>You've pressed the button {counter} times.</p>
         <h2>Total Clicks</h2>
-        <p>You've pressed the button {userInfo.clickCount} times.</p>
+        <p><b>You've pressed the button {userInfo.clickCount} times.</b></p>
         { users.map(user => <User key={ user._id } user={ user }/>) }
     </div>
   );

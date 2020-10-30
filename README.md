@@ -1,4 +1,7 @@
 # react-clicks
 git pull repositeries-url
+
 cd react-clicks
-meteor
+
+run the application with meteor
+

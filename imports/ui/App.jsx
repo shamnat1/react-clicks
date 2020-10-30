@@ -8,7 +8,6 @@ import { Session } from 'meteor/session'
 
 export const App = () => {
   const userInfo = useTracker(() =>  UsersCollection.findOne({"_id":Session.get("userId")}));
-  console.log("userInfo1 ",userInfo)
   return(
     <div className="app">
       <header>
