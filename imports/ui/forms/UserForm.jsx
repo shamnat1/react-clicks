@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {UsersCollection} from "../../api/UsersCollection";
+import {UsersCollection} from "../../db/UsersCollection";
 import { Session } from 'meteor/session'
 import { Meteor } from 'meteor/meteor';
 export const UserForm = () => {

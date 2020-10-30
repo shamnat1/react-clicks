@@ -1,6 +1,6 @@
 import React,{  Fragment } from 'react';
 import { useTracker } from 'meteor/react-meteor-data';
-import { UsersCollection } from '/imports/api/UsersCollection';
+import { UsersCollection } from '/imports/db/UsersCollection';
 import { User } from './User';
 import { Click } from './Click.jsx';
 import { UserForm } from './forms/UserForm';

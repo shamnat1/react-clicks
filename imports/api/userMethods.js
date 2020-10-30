@@ -1,5 +1,5 @@
 import { check } from 'meteor/check';
-import {UsersCollection} from "./UsersCollection";
+import {UsersCollection} from "../db/UsersCollection";
 
 Meteor.methods({
     'users.search'(name) {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
-import {UsersCollection} from "../api/UsersCollection";
+import {UsersCollection} from "../db/UsersCollection";
 import {User} from "./User";
 
 export const Click = () => {

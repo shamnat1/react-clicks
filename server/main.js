@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { UsersCollection } from '/imports/api/UsersCollection';
+import { UsersCollection } from '/imports/db/UsersCollection';
 import '/imports/api/userMethods';
 
 Meteor.startup(() => {
